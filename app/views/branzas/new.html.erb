@@ -1,0 +1,13 @@
+<h1>Stworz branżę</h1>
+
+<%= form_with model: @Branza do |form| %>
+  <div>
+    <%=form.label :nazwa %>
+    <br>
+    <%= form.text_field :nazwa %>
+  </div>
+  <div>
+
+    <%=form.submit %>
+  </div>
+<% end %>
