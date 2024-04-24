@@ -1,5 +1,6 @@
-<h1>Stworz branżę</h1>
-
+<h1 style="text-align: center">Stworz branżę</h1>
+<div style="display: flex;justify-content: center;align-items: center;
+  height: 20vh;">
 <%= form_with model: @Branza do |form| %>
   <div>
     <%=form.label :nazwa %>
@@ -13,3 +14,4 @@
     <%=form.submit %>
   </div>
 <% end %>
+</div>

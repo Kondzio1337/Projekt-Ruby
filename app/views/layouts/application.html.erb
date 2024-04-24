@@ -10,6 +10,35 @@
   </head>
 
   <body>
-    <%= yield %>
+
+  <header>
+    <div style="float: left;width: 33%; background-color: grey;">
+  <h1 style="text-align: center" >Branże</h1>
+      <div >
+    <a href="/branzas/add">Dodaj branze</a>
+      <br>
+
+      <a href="/branzas">Obejrzyj branze</a>
+      </div>
+    </div>
+    <div style="float: left;width: 33%;background-color: grey;">
+      <h1 style="text-align: center">Firmy</h1>
+
+      <a href="/branzas/add">Dodaj branze</a>
+      <br>
+
+      <a href="/branzas">Obejrzyj branze</a>
+
+    </div>
+    <div style="float: left;width: 33%;background-color: grey;">
+      <h1 style="text-align: center">Oferty</h1>
+      <a href="/branzas/add">Dodaj branze</a>
+      <br>
+
+      <a href="/branzas">Obejrzyj branze</a>
+    </div>
+  </header>
+
   </body>
+  <%= yield %>
 </html>
