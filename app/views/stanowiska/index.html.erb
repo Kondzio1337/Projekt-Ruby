@@ -1,0 +1,15 @@
+<h1 style="text-align: center">Stanowiska</h1>
+<br>
+<div style="display: flex;justify-content: center;align-items: center;
+  height: 20vh;">
+
+<ul>
+  <% @Stanowisko.each do |stano| %>
+    <li>
+      <%= stano.nazwa %>
+    </li>
+  <% end %>
+
+
+</ul>
+</div>

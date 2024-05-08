@@ -1,0 +1,17 @@
+<h1 style="text-align: center">Dodaj firme</h1>
+<div style="display: flex;justify-content: center;align-items: center;
+  height: 20vh;">
+<%= form_with model: @Firma, url: firma_path do |form| %>
+  <div>
+    <%=form.label :nazwa %>
+    <br>
+    <br>
+    <%= form.text_field :nazwa %>
+  </div>
+  <div>
+    <br>
+    <br>
+    <%=form.submit %>
+  </div>
+<% end %>
+</div>

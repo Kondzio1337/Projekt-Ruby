@@ -1,9 +1,22 @@
 <h1>Oferty</h1>
-
+<h3>
+  Filtruj po branży
+</h3>
+<%= form_tag oferty_path, method: :get do %>
+  <%= select_tag :branza_id, options_from_collection_for_select(@branze, :id, :nazwa) %>
+  <%= submit_tag "Filtruj" %>
+<% end %>
 <ul>
   <% @oferty.each do |oferta| %>
   <li>
-    <% oferta.tytul %>
+    <br><br>
+    <strong>Tytuł:</strong> <%= oferta.tytul %>
+    <br>
+    <strong>Firma:</strong> <%= Firma.find(oferta.id_firmy).nazwa %>
+    <br>
+    <strong>Stanowisko:</strong> <%= Stanowisko.find(oferta.id_stanowiska).nazwa %>
+    <br>
+    <strong>Branża:</strong> <%= Branza.find(oferta.id_branzy).nazwa %>
   </li>
   <% end %>
 

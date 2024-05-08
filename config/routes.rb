@@ -8,7 +8,14 @@ Rails.application.routes.draw do
   get "/branzas/add", to: "branzas#new"
   get "/branzas", to: "branzas#index"
   get "/firma", to: "firma#index"
+  get "/firma/add", to: "firma#new"
+  get "/oferty/add", to: "oferty#new"
+  get "/stanowiska", to: "stanowiska#index"
+  get "/stanowiska/add", to: "stanowiska#new"
   # Defines the root path route ("/")
   # root "posts#index"
   resources :branzas
+  resources :oferty
+  resources :stanowiska
+  resources :firma
 end

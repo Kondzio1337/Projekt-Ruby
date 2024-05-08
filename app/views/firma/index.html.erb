@@ -1,10 +1,15 @@
-<h1>Dodaj firme</h1>
-<%= form_with model: @firma do |form| %>
-  <div>
-    <%=form.label :nazwa %>
-  </div>
-  <div>
+<h1 style="text-align: center">Firmy</h1>
+<br>
+<div style="display: flex;justify-content: center;align-items: center;
+  height: 20vh;">
 
-    <%=form.submit %>
-  </div>
-<% end %>
+  <ul>
+    <% @Firma.each do |firma| %>
+      <li>
+        <%= firma.nazwa %>
+      </li>
+    <% end %>
+
+
+  </ul>
+</div>

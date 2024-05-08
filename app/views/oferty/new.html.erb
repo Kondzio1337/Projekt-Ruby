@@ -1,0 +1,41 @@
+<h1 style="text-align: center">Stworz Oferte</h1>
+<br>
+<br>
+<div style="display: flex;justify-content: center;align-items: center;
+  height: 20vh;">
+  <%= form_with model: @oferty, url: oferty_path do |form| %>
+
+<div>
+      <%=form.label :tytul %>
+      <br>
+      <%= form.text_field :tytul %>
+    </div>
+    <br>
+    <div>
+      <%=form.label :Branże %>
+      <br>
+      <%=form.collection_select :id_branzy , @branze, :id, :nazwa %>
+    </div>
+    <br>
+    <div>
+      <%=form.label :Stanowisko %>
+      <br>
+      <%=form.collection_select :id_stanowiska , @stanowisko, :id, :nazwa %>
+    </div>
+    <br>
+    <div>
+      <%=form.label :Firma %>
+      <br>
+      <%=form.collection_select :id_firmy , @firma, :id, :nazwa %>
+    </div>
+    <br>
+    <div>
+      <%= form.text_field :rodzaj, value: 1201264, readonly: true %>
+    </div>
+    <div>
+      <br>
+      <br>
+      <%=form.submit %>
+    </div>
+  <% end %>
+</div>
