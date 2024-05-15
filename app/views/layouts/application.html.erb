@@ -36,7 +36,14 @@
       <br>
 
       <a href="/oferty">Przejrzyj oferty</a>
+      <% if user_signed_in? %>
+        <p>Zalogowany jako <%= current_user.email %></p>
+        <%= link_to "Wyloguj się", destroy_user_session_path, method: :delete%>
+      <% else %>
+        <%= link_to "Zaloguj się", new_user_session_path %>
+      <% end %>
     </div>
+
   </header>
 
   </body>

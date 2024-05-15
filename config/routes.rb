@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users, controllers: {sessions: 'sessions'}
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   root "public#home"
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
@@ -12,6 +13,9 @@ Rails.application.routes.draw do
   get "/oferty/add", to: "oferty#new"
   get "/stanowiska", to: "stanowiska#index"
   get "/stanowiska/add", to: "stanowiska#new"
+
+
+
   # Defines the root path route ("/")
   # root "posts#index"
   resources :branzas

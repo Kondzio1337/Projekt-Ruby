@@ -1,5 +1,6 @@
 class FirmaController < ApplicationController
 
+  before_action :authenticate_user!, only: [:new]
   def index
     @Firma= Firma.all
   end

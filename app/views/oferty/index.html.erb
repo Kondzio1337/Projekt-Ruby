@@ -17,6 +17,7 @@
     <strong>Stanowisko:</strong> <%= Stanowisko.find(oferta.id_stanowiska).nazwa %>
     <br>
     <strong>Branża:</strong> <%= Branza.find(oferta.id_branzy).nazwa %>
+    <strong>Rodzaj:</strong> <%= oferta.rodzaj %>
   </li>
   <% end %>
 

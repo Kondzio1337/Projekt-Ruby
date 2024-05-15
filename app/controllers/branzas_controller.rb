@@ -1,5 +1,6 @@
 class BranzasController < ApplicationController
-  http_basic_authenticate_with name: "admin", password: "secret", except: [:index]
+
+  before_action :authenticate_user!, only: [:new]
   def index
     @Branza= Branza.all
   end
