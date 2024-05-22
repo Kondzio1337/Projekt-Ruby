@@ -1,25 +1,41 @@
-<h1>Oferty</h1>
-<h3>
-  Filtruj po branży
-</h3>
+
+
+<div align="center" style="justify-content: center;align-items: center;">
+  <h1>Oferty</h1>
+  <h3>
+    Filtruj po branży
+  </h3>
 <%= form_tag oferty_path, method: :get do %>
   <%= select_tag :branza_id, options_from_collection_for_select(@branze, :id, :nazwa) %>
   <%= submit_tag "Filtruj" %>
 <% end %>
-<ul>
+</div>
+<ol class="no-style">
   <% @oferty.each do |oferta| %>
+    <hr class="dotted-hr">
   <li>
     <br><br>
+    <div align="center">
     <strong>Tytuł:</strong> <%= oferta.tytul %>
-    <br>
-    <strong>Firma:</strong> <%= Firma.find(oferta.id_firmy).nazwa %>
-    <br>
-    <strong>Stanowisko:</strong> <%= Stanowisko.find(oferta.id_stanowiska).nazwa %>
-    <br>
-    <strong>Branża:</strong> <%= Branza.find(oferta.id_branzy).nazwa %>
-    <strong>Rodzaj:</strong> <%= oferta.rodzaj %>
+    </div>
+    <div>
+              <br>
+              <div align="center" style="float:left ; width: 50%; height: 120px">
+                <p><%= oferta.id %></p>
+                      <strong>Firma:</strong> <%= Firma.find(oferta.id_firmy).nazwa %>
+                      <br>
+                      <strong>Stanowisko:</strong> <%= Stanowisko.find(oferta.id_stanowiska).nazwa %>
+                      <br>
+                      <strong>Branża:</strong> <%= Branza.find(oferta.id_branzy).nazwa %>
+                      <strong>Rodzaj:</strong> <%= oferta.rodzaj %>
+              </div>
+              <br>
+              <div align="center" style="float: left; width:50%;">
+                        <a  href="<%= odpowiedz_path(oferta.id) %>" class="btn square-btn">Odpowiedz na oferte</a>
+              </div>
+    </div>
   </li>
   <% end %>
 
 
-</ul>
+</ol>

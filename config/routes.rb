@@ -13,8 +13,11 @@ Rails.application.routes.draw do
   get "/oferty/add", to: "oferty#new"
   get "/stanowiska", to: "stanowiska#index"
   get "/stanowiska/add", to: "stanowiska#new"
-
-
+  get '/odpowiedz/:id', to: 'odpowiedzias#respond', as: 'odpowiedz'
+  post "/odpowiedz/:id", to: 'odpowiedzias#create'
+  get "/uzytkownicy", to: "uzytkownicy#index"
+  get "/oferty/twoje" , to: "oferty#twoje"
+  get "/odpowiedzias/firma", to: "odpowiedzias#firma"
 
   # Defines the root path route ("/")
   # root "posts#index"
@@ -22,4 +25,6 @@ Rails.application.routes.draw do
   resources :oferty
   resources :stanowiska
   resources :firma
+  resources :odpowiedzias
+  resources :uzytkownicy
 end

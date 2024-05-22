@@ -1,0 +1,37 @@
+
+
+<div align="center" style="justify-content: center;align-items: center;">
+  <h1>Oferty</h1>
+  <h3>
+    Filtruj po branży
+  </h3>
+
+</div>
+<% if @odpowiedzi.any? %>
+  <table>
+    <thead>
+    <tr>
+      <th>Imię</th>
+      <th>Nazwisko</th>
+      <th>Wiek</th>
+      <th>Miejsce zamieszkania</th>
+      <th>Staż</th>
+      <th>Rodzaj wykształcenia</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @odpowiedzi.each do |odpowiedz| %>
+      <tr>
+        <td><%= odpowiedz.imie %></td>
+        <td><%= odpowiedz.nazwisko %></td>
+        <td><%= odpowiedz.wiek %></td>
+        <td><%= odpowiedz.miejsce_zamieszkania unless odpowiedz.miejsce_zamieszkania.nil? %></td>
+        <td><%= odpowiedz.staz %></td>
+        <td><%= odpowiedz.rodzaj_wyksztalcenia %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p>Brak odpowiedzi do wyświetlenia.</p>
+<% end %>

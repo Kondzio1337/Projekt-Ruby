@@ -12,12 +12,29 @@ class OfertyController < ApplicationController
     @stanowisko = Stanowisko.all
   end
 
+  def twoje
+    @firma = Firma.where(user_id: current_user.id).first
+    firma_id = @firma.id
+
+    Rails.logger.info (firma_id.to_s)
+
+    @oferty = Ofertum.where(id_firmy: firma_id)
+
+
+    @branze = Branza.all
+    @firma = Firma.all
+    @stanowisko = Stanowisko.all
+
+  end
+
   def new
     @oferty = Ofertum.new
     @branze = Branza.all
     @firma = Firma.all
     @stanowisko = Stanowisko.all
   end
+
+
 
   def create
 

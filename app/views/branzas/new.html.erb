@@ -1,6 +1,7 @@
 <h1 style="text-align: center">Stworz branżę</h1>
 <div style="display: flex;justify-content: center;align-items: center;
   height: 20vh;">
+  <% if user_signed_in? && current_user.admin? %>
 <%= form_with model: @Branza do |form| %>
   <div>
     <%=form.label :nazwa %>
@@ -14,4 +15,7 @@
     <%=form.submit %>
   </div>
 <% end %>
+    <%else %>
+    <p>Nie masz uprawnień !!!</p>
+  <%end %>
 </div>

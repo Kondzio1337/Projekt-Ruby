@@ -1,0 +1,51 @@
+.btn {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    background-color: #007BFF; /* niebieski kolor */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+}
+
+.btn:hover {
+    background-color: #0056b3; /* ciemniejszy niebieski przy najechaniu */
+}
+
+.large-btn {
+    width: 85%; /* szerokość przycisku */
+    margin: 10px 0; /* odstępy między przyciskami */
+}
+.small-btn{
+    width: 200px; /* szerokość przycisku */
+    margin: 10px 0; /* odstępy między przyciskami */
+}
+
+.dotted-hr {
+    border: none;
+    border-top: 3px dotted #128ac6; /* Ustawia grubość, styl i kolor linii */
+    color: #128ac6; /* Kolor linii */
+    height: 1px;
+    width: 100%;
+}
+.no-style {
+    list-style-type: none; /* Usuwa numery z ol i kropki z ul */
+
+}
+.square-btn {
+    width: 120px; /* szerokość przycisku */
+    height: 120px; /* wysokość przycisku */
+    padding: 0; /* wyłączenie paddingu, aby przycisk był dokładnie kwadratowy */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0; /* odstępy między przyciskami */
+    border: solid 3px darkblue ;
+    border-radius: 15px;
+}

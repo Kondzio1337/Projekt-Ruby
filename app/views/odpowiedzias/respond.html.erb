@@ -1,0 +1,65 @@
+<h1>Formularz odpowiedzi</h1>
+<div>
+<%= form_with model: @odpowiedz, url: odpowiedzias_path(oferta_id: @oferta.id) do |form| %>
+  <div >
+    <p>Tytuł oferty: <%= @oferta.tytul %></p>
+    <p>Stanowisko: <%= Stanowisko.find(@oferta.id_stanowiska).nazwa %></p>
+    <p>Firma: <%= Firma.find(@oferta.id_firmy).nazwa %></p>
+    <p>Branża: <%= Branza.find(@oferta.id_branzy).nazwa %></p>
+    <p>Rodzaj: <%= @oferta.rodzaj %></p>
+
+
+  </div>
+  <br>
+    <%=form.label :Imię %>
+    <br>
+    <%= form.text_field :imie %>
+    <br>
+    <%=form.label :Nazwisko %>
+    <br>
+    <%= form.text_field :nazwisko %>
+    <br>
+    <% if @rodzaj.present? && @rodzaj[0] == "1" %>
+                        <div >
+                    <%=form.label :Wiek0 %>
+                    <br>
+                    <%= form.text_field :wiek %>
+
+                    </div>
+    <% end %>
+
+    <% if @rodzaj.present? && @rodzaj[1] == "1" %>
+      <div >
+        <%=form.label :Wykształcenie1 %>
+        <br>
+        <%= form.text_field :rodzaj_wyksztalcenia %>
+
+      </div>
+    <% end %>
+    <% if @rodzaj.present? && @rodzaj[2] == "1" %>
+      <div >
+        <%=form.label :MiejsceZamieszkania2 %>
+        <br>
+        <%= form.text_field :miejsce_zamieszkania %>
+
+      </div>
+    <% end %>
+    <% if @rodzaj.present? && @rodzaj[3] == "1" %>
+      <div >
+        <%=form.label :Staz3 %>
+        <br>
+        <%= check_box_tag :staz %>
+
+      </div>
+    <% end %>
+
+
+
+</div>
+  <div>
+    <br>
+    <br>
+    <%=form.submit "Wyślij zgłoszenie" %>
+  </div>
+<% end %>
+</div>
