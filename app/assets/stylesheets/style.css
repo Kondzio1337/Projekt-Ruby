@@ -49,3 +49,32 @@
     border: solid 3px darkblue ;
     border-radius: 15px;
 }
+.moja-tabela {
+    width: 70%; /* Rozciągnij tabelę na 100% szerokości kontenera */
+}
+.moja-tabela th, .moja-tabela td {
+    padding: 10px; /* Dodaj odstępy wewnętrzne */
+    width: 50%; /* Rozciągnij kolumny równomiernie */
+    text-align: center;
+
+    font-size: 25px;
+
+}
+.moja-tabela th {
+    background-color: #347ecc;
+}
+.moja-tabela td {
+    background-color: #5d9bcc;
+}
+.moja-tabela th:nth-child(1), .moja-tabela td:nth-child(1) {
+    width: 40%; /* Pierwsza kolumna szersza */
+}
+.moja-tabela th:nth-child(2), .moja-tabela td:nth-child(2) {
+    width: 30%; /* Druga kolumna węższa */
+}
+.table-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* jeśli chcesz, aby kontener miał określoną wysokość */
+}

@@ -1,0 +1,46 @@
+
+
+<div align="center" style="justify-content: center;align-items: center;">
+  <h1>Szczegóły </h1>
+
+
+</div>
+
+<% if @odpowiedz!=nil %>
+
+  <p style="text-align: center;font-size:20px;"><%= Ofertum.find(@odpowiedz.id_oferty).tytul %></p>
+  <div >
+  <table class="moja-tabela">
+    <thead>
+    <tr>
+      <th>Imię</th>
+      <th>Nazwisko</th>
+      <th>Wiek</th>
+      <th>Numer Kontaktowy</th>
+      <th>Miejsce zamieszkania</th>
+      <th>Staż</th>
+      <th>Rodzaj wykształcenia</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    <hr>
+    <br>
+      <tr>
+
+        <td><%= @odpowiedz.imie %></td>
+        <td><%= @odpowiedz.nazwisko %></td>
+
+        <td><%= @odpowiedz.wiek %></td>
+        <th><%= @odpowiedz.nr_tel %></th>
+        <td><%= @odpowiedz.miejsce_zamieszaknia unless @odpowiedz.miejsce_zamieszaknia.nil? %></td>
+        <td><%= @odpowiedz.staz %></td>
+        <td><%= @odpowiedz.rodzaj_wyksztalcenia %></td>
+      </tr>
+
+    </tbody>
+  </table>
+  </div>
+<% else %>
+  <p>Brak odpowiedzi do wyświetlenia.</p>
+<% end %>

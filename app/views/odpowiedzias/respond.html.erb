@@ -19,6 +19,11 @@
     <br>
     <%= form.text_field :nazwisko %>
     <br>
+    <%=form.label :Numer_Kontaktowy %>
+    <br>
+    <%= form.text_field :nr_tel %>
+
+    <br>
     <% if @rodzaj.present? && @rodzaj[0] == "1" %>
                         <div >
                     <%=form.label :Wiek0 %>

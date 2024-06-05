@@ -1,33 +1,37 @@
 
 
 <div align="center" style="justify-content: center;align-items: center;">
-  <h1>Oferty</h1>
-  <h3>
-    Filtruj po branży
-  </h3>
+  <h1>Odpowiedzi</h1>
+
 
 </div>
 <% if @odpowiedzi.any? %>
-  <table>
+  <div class="table-container">
+  <table class="moja-tabela">
     <thead>
     <tr>
+      <th>Firma</th>
+      <th>Oferta</th>
       <th>Imię</th>
       <th>Nazwisko</th>
-      <th>Wiek</th>
-      <th>Miejsce zamieszkania</th>
-      <th>Staż</th>
-      <th>Rodzaj wykształcenia</th>
+
+
+
+
     </tr>
     </thead>
     <tbody>
     <% @odpowiedzi.each do |odpowiedz| %>
+
       <tr>
+        <td><%= Firma.find((Ofertum.find(odpowiedz.id_oferty).id_firmy)).nazwa %></td>
+        <td><%= Ofertum.find(odpowiedz.id_oferty).tytul %></td>
         <td><%= odpowiedz.imie %></td>
         <td><%= odpowiedz.nazwisko %></td>
-        <td><%= odpowiedz.wiek %></td>
-        <td><%= odpowiedz.miejsce_zamieszaknia unless odpowiedz.miejsce_zamieszaknia.nil? %></td>
-        <td><%= odpowiedz.staz %></td>
-        <td><%= odpowiedz.rodzaj_wyksztalcenia %></td>
+
+        <td>  <div align="center" style="float: left; width:30%;">
+          <a  href="<%= odpowiedz_index_path(odpowiedz.id) %>" class="btn square-btn">szczegoly</a>
+        </div></td>
       </tr>
     <% end %>
     </tbody>
@@ -35,3 +39,4 @@
 <% else %>
   <p>Brak odpowiedzi do wyświetlenia.</p>
 <% end %>
+</div>

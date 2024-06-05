@@ -14,7 +14,9 @@ class OdpowiedziasController < ApplicationController
 
       @odpowiedzi += Odpowiedz.where(id_oferty: oferta.id)
     end
-
+    def szczegoly
+      @odpowiedz=Odpowiedz.find(params[:id])
+    end
 
   end
     def respond
@@ -42,7 +44,7 @@ class OdpowiedziasController < ApplicationController
 
     private
     def odpoweidz_params
-      params.require(:odpowiedz).permit(:wiek, :imie, :nazwisko, :miejsce_zamieszaknia, :staz , :rodzaj_wyksztalcenia)
+      params.require(:odpowiedz).permit(:wiek, :imie, :nazwisko, :miejsce_zamieszaknia, :staz , :rodzaj_wyksztalcenia,:nr_tel)
     end
   end
 

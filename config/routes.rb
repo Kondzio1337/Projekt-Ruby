@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   get "/uzytkownicy", to: "uzytkownicy#index"
   get "/oferty/twoje" , to: "oferty#twoje"
   get "/odpowiedzias/firma", to: "odpowiedzias#firma"
+  get "/odpowiedzias/szczegoly/:id", to: "odpowiedzias#szczegoly" ,as: 'odpowiedz_index'
 
   # Defines the root path route ("/")
   # root "posts#index"
