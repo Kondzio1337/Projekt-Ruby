@@ -19,8 +19,16 @@
     <strong>Tytuł:</strong> <%= oferta.tytul %>
     </div>
     <div>
+                <div align="left" style="float:left ; width: 20%; height: 120px" >
+
+                       <% if Firma.find(oferta.id_firmy).image.present? %>
+                         <p>
+                       <%= image_tag Firma.find(oferta.id_firmy).image.url %>
+                         </p>
+                        <% end %>
+               </div>
               <br>
-              <div align="center" style="float:left ; width: 50%; height: 120px">
+              <div align="center" style="float:left ; width: 40%; height: 120px">
                 <p><%= oferta.id %></p>
                       <strong>Firma:</strong> <%= Firma.find(oferta.id_firmy).nazwa %>
                       <br>
@@ -30,7 +38,7 @@
                       <strong>Rodzaj:</strong> <%= oferta.rodzaj %>
               </div>
               <br>
-              <div align="center" style="float: left; width:50%;">
+              <div align="center" style="float: left; width:40%;">
                         <a  href="<%= odpowiedz_path(oferta.id) %>" class="btn square-btn">Odpowiedz na oferte</a>
               </div>
     </div>

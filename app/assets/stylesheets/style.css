@@ -78,3 +78,31 @@
     align-items: center;
     height: 100%; /* jeśli chcesz, aby kontener miał określoną wysokość */
 }
+.submit-button {
+    background-color: #ffffff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    outline: none;
+    -webkit-appearance: none;  /* Usuwa domyślne style na przeglądarkach WebKit */
+    -moz-appearance: none;     /* Usuwa domyślne style na przeglądarkach Mozilla */
+    appearance: none;          /* Usuwa domyślne style na innych przeglądarkach */
+}
+
+.blue-box {
+    width: 90%; /* Dla przykładu */
+    height: 90%; /* Dla przykładu */
+    background-color: #6db4ec; /* Kolor niebieski jasny */
+    border-radius: 15px; /* Zaokrąglenie rogów */
+
+}
+.blue-box-dotted {
+    width: 200px; /* Dla przykładu */
+    height: 200px; /* Dla przykładu */
+    background-color: #87CEFA; /* Kolor niebieski jasny */
+    border-radius: 15px; /* Zaokrąglenie rogów */
+    border: 2px dotted #000; /* Obramowanie kropkowane, 2px szerokości, kolor czarny */
+}

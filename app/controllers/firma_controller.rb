@@ -24,7 +24,7 @@ class FirmaController < ApplicationController
 
   private
   def firma_params
-    params.require(:firma).permit(:nazwa)
+    params.require(:firma).permit(:nazwa, :image)
   end
 
 end

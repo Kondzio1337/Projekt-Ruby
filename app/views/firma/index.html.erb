@@ -7,7 +7,13 @@
     <% @Firma.each do |firma| %>
       <li>
         <%= firma.nazwa %>
+        <% if firma.image.present? %>
+          <p>
+            <%= image_tag firma.image.url %>
+          </p>
+        <% end %>
       </li>
+
     <% end %>
 
 
