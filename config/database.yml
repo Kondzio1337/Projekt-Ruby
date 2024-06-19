@@ -21,11 +21,11 @@ default: &default
 
 development:
   <<: *default
-  database: mysite_rf47
-  username: mysite
-  password: T6PFDDQDcsl4IxEnazQqNK7ruglWFzwS
-  host: dpg-cokg4jmv3ddc7395j0h0-a.oregon-postgres.render.com
-  port: 5432
+  database: ENV['database']
+  username: ENV['username']
+  password: ENV['password']
+  host: ENV['host']
+  port: ENV['port']
 
   # The specified database role being used to connect to PostgreSQL.
   # To create additional roles in PostgreSQL see `$ createuser --help`.

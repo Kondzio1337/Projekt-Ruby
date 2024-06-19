@@ -1,4 +1,5 @@
 <h1 align="center">Formularz odpowiedzi</h1>
+<hr class="dotted-hr">
 <div>
 <%= form_with model: @odpowiedz, url: odpowiedzias_path(oferta_id: @oferta.id) do |form| %>
   <div align="center"  style="float:left ; width: 40%" >
@@ -42,6 +43,11 @@
                               <%=form.label :Numer_Kontaktowy %>
                               <br>
                               <%= form.text_field :nr_tel %>
+                              <br>
+                              <%=form.label :Email %>
+                              <br>
+                              <%= form.text_field :email%>
+
         <br>
         <br>
       </div>

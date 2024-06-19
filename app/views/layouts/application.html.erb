@@ -13,50 +13,67 @@
   <body>
 
   <header>
-    <div style="float: left;width: calc(100% / 3); background-color: skyblue;">
-  <h1 style="text-align: center" >Branże</h1>
-      <div align="center" >
-        <% if user_signed_in? && current_user.admin? %>
-    <a href="/branzas/add" class="btn large-btn ">Dodaj branze</a>
-        <% end %>
-      <br>
+                  <div style="float:left;width: calc(100% / 3);">
+                            <p>image tu ma byc</p>
+                  </div>
+                  <div align="center" style="float:left;width: calc(100% / 3);">
+                            <h1 class="stylish-text size_portal">PORTAL PRACY</h1>
+                  </div>
+                  <div align="center" class="btn_2">
+                            <% if  user_signed_in? %>
+                              <p>Zalogowany jako <%= current_user.email %></p>
+                              <div class="btn">
+                              <%= link_to "Wyloguj się", destroy_user_session_path, data: { turbo_method: :delete } %>
+                              </div>
+                            <% else %>
+                              <div class="btn">
+                              <%= link_to "Zaloguj się", new_user_session_path %>
+                              </div>
+                            <% end %>
+                            <% if user_signed_in? && current_user.admin? %>
+                              <%= link_to 'Użytkownicy', uzytkownicy_path %>
+                            <% end %>
+                  </div>
+                  <div style="clear: both">
 
-      <a href="/branzas" class="btn large-btn ">Obejrzyj branze</a>
-      </div>
-    </div>
-    <div align="center" style="float: left;width: calc(100% / 3);background-color: skyblue;">
-      <h1 style="text-align: center ">Firmy</h1>
-      <% if user_signed_in? %>
-      <a href="/firma/add" class="btn large-btn ">Dodaj firme</a>
-      <% end %>
-      <br>
-      <% if user_signed_in? %>
-        <a href="/odpowiedzias/firma" class="btn large-btn ">Zobacz Odpowiedzi</a>
-      <% end %>
-      <a href="/firma" class="btn large-btn ">Przejrzyj firmy</a>
+                  </div>
+                  <div align="center" style="float: left;width: calc(100% / 3); background-color: skyblue;">
+                      <h1 class="stylish-text" >Branże</h1>
 
-    </div>
-    <div align="center"  style="float: left;width: calc(100% / 3);background-color: skyblue;align:center ;">
-      <h1 style="text-align: center">Oferty</h1>
-      <% if user_signed_in? %>
-      <a href="/oferty/add" class="btn large-btn ">Dodaj oferte</a>
-      <% end %>
-      <% if user_signed_in? %>
-        <a href="/oferty/twoje" class="btn large-btn ">Twoje oferty</a>
-      <% end %>
-      <br>
+                                            <% if user_signed_in? && current_user.admin? %>
+                                              <a href="/branzas/add" class="btn large-btn ">Dodaj branze</a>
+                      <br>
+                                            <% end %>
 
-      <a href="/oferty" class="btn large-btn ">Przejrzyj oferty</a>
-      <% if  user_signed_in? %>
-        <p>Zalogowany jako <%= current_user.email %></p>
-        <%= link_to "Wyloguj się", destroy_user_session_path, data: { turbo_method: :delete } %>
-      <% else %>
-        <%= link_to "Zaloguj się", new_user_session_path %>
-      <% end %>
-      <% if user_signed_in? && current_user.admin? %>
-        <%= link_to 'Użytkownicy', uzytkownicy_path %>
-      <% end %>
-    </div>
+
+                                              <a href="/branzas" class="btn large-btn ">Obejrzyj branze</a>
+
+                  </div>
+                  <div align="center" style="float: left;width: calc(100% / 3);background-color: skyblue;">
+                                              <h1 class="stylish-text">Firmy</h1>
+                                              <% if user_signed_in? %>
+                                              <a href="/firma/add" class="btn large-btn ">Dodaj firme</a>
+                                              <% end %>
+                                              <br>
+                                              <% if user_signed_in? %>
+                                                <a href="/odpowiedzias/firma" class="btn large-btn ">Zobacz Odpowiedzi</a>
+                                              <% end %>
+                                              <a href="/firma" class="btn large-btn ">Przejrzyj firmy</a>
+
+                  </div>
+                  <div align="center"  style="float: left;width: calc(100% / 3);background-color: skyblue;align:center ;">
+                                              <h1 class="stylish-text">Oferty</h1>
+                                              <% if user_signed_in? %>
+                                              <a href="/oferty/add" class="btn large-btn ">Dodaj oferte</a>
+                                              <% end %>
+                                              <% if user_signed_in? %>
+                                                <a href="/oferty/twoje" class="btn large-btn ">Twoje oferty</a>
+                                              <% end %>
+                                              <br>
+
+                                              <a href="/oferty" class="btn large-btn ">Przejrzyj oferty</a>
+
+                  </div>
 
   </header>
 

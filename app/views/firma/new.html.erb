@@ -1,18 +1,22 @@
-<h1 style="text-align: center">Dodaj firme</h1>
+
+<div  style="width: 100% ;height:100% ;padding-right:30%;padding-top:20%">
+<h1 class="stylish-text-2">Dodaj firme</h1>
+  <hr class="dotted-hr">
 <div style="display: flex;justify-content: center;align-items: center;
   height: 20vh;">
 <%= form_with model: @Firma, url: firma_path do |form| %>
   <div>
     <%=form.label :nazwa %>
     <br>
-    <br>
     <%= form.text_field :nazwa %>
   </div>
+    <br>
     <%= form.file_field :image %>
   <div>
     <br>
     <br>
-    <%=form.submit %>
+    <%=form.submit 'Dodaj' ,class:"btn"%>
   </div>
 <% end %>
+</div>
 </div>

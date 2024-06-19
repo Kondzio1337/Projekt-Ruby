@@ -24,6 +24,21 @@ module Projekt
     # in config/environments, which are processed later.
     #
     # config.time_zone = "Central Time (US & Canada)"
-    # config.eager_load_paths << Rails.root.join("extras")
+    # config.eager_load_paths << Rails.root.join("extras"
+
+    # Konfiguracja loggerow
+    file_logger=ActiveSupport::Logger.new(Rails.root.join('log', "#{Rails.env}.log"))
+    stdout_logger=ActiveSupport::Logger.new(STDOUT)
+
+
+    multi_logger = ActiveSupport::Logger.new(Rails.root.join("log", "#{Rails.env}_multi.log"))
+    multi_logger.formatter = ActiveSupport::Logger::Formatter.new
+
+    logger = ActiveSupport::Logger.new(Rails.root.join("log", "#{Rails.env}.log"))
+    logger.formatter = ActiveSupport::Logger::Formatter.new
+
+    # config.logger = ActiveSupport::Logger.new(Rails.root.join("log", "#{Rails.env}.log"))
+    config.logger = multi_logger
+
   end
 end

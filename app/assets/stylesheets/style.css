@@ -13,7 +13,11 @@
     transition: background-color 0.3s ease;
 
 }
+.btn_2{
 
+    width: calc(100% / 3);
+float:left;
+}
 .btn:hover {
     background-color: #0056b3; /* ciemniejszy niebieski przy najechaniu */
 }
@@ -105,4 +109,28 @@
     background-color: #87CEFA; /* Kolor niebieski jasny */
     border-radius: 15px; /* Zaokrąglenie rogów */
     border: 2px dotted #000; /* Obramowanie kropkowane, 2px szerokości, kolor czarny */
+}
+
+.stylish-text {
+
+    font-weight: bold;
+    color: #0072ff;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    transform: skew(-10deg);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+.size_portal{
+    font-size: 48px;
+}
+.stylish-text-2
+{
+    font-weight: bold;
+    color: #0c0819;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    transform: skew(-10deg);
+    text-shadow: 2px 2px 5px rgb(52, 126, 204);
+    text-align: center;
 }

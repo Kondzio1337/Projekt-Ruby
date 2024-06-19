@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'errors/not_found'
+  get 'errors/internal_server_error'
   devise_for :users, controllers: {sessions: 'sessions'}
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   root "public#home"
@@ -19,6 +21,10 @@ Rails.application.routes.draw do
   get "/oferty/twoje" , to: "oferty#twoje"
   get "/odpowiedzias/firma", to: "odpowiedzias#firma"
   get "/odpowiedzias/szczegoly/:id", to: "odpowiedzias#szczegoly" ,as: 'odpowiedz_index'
+
+  match "*unmatched_route", to: "errors#not_found", via: :all
+  match "/500", to: "errors#internal_server_error", via: :all
+
 
   # Defines the root path route ("/")
   # root "posts#index"
