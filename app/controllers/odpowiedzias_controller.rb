@@ -38,7 +38,7 @@ class OdpowiedziasController < ApplicationController
       @odpowiedz.id_oferty = @oferta.id
 
       if @odpowiedz.save
-        redirect_to @odpowiedz, notice: 'Odpowiedź została pomyślnie zapisana.'
+        redirect_to "/oferty", notice: 'Odpowiedź została pomyślnie zapisana.'
       else
         Rails.logger.info("Nie udało sie zapisać odpowiedzi")
         render :respond

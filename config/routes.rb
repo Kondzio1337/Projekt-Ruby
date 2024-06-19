@@ -21,6 +21,15 @@ Rails.application.routes.draw do
   get "/oferty/twoje" , to: "oferty#twoje"
   get "/odpowiedzias/firma", to: "odpowiedzias#firma"
   get "/odpowiedzias/szczegoly/:id", to: "odpowiedzias#szczegoly" ,as: 'odpowiedz_index'
+  post "/odpowiedzias", to: "odpowiedzias#create"
+
+  resources :branzas
+  resources :oferty
+  resources :stanowiska
+  resources :firma
+  resources :odpowiedzias
+  resources :uzytkownicy
+
 
   match "*unmatched_route", to: "errors#not_found", via: :all
   match "/500", to: "errors#internal_server_error", via: :all
@@ -28,10 +37,5 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
-  resources :branzas
-  resources :oferty
-  resources :stanowiska
-  resources :firma
-  resources :odpowiedzias
-  resources :uzytkownicy
+
 end

@@ -21,6 +21,8 @@ default: &default
 
 development:
   <<: *default
+
+
   database: ENV['database']
   username: ENV['username']
   password: ENV['password']
